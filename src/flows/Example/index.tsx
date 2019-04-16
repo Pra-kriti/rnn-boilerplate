@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, Text, View, Button, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Button, ScrollView, Share } from 'react-native'
 import { Navigation, Options } from 'react-native-navigation'
 import { publicRoute } from 'navigation/public/routes'
 
@@ -22,14 +22,14 @@ export class Example extends React.Component<Props> {
     return (
       <ScrollView contentContainerStyle={{ flex: 1 }}>
         <View style={styles.container}>
-          <Text style={styles.welcome}>Welcome to Example 1!</Text>
+          <Text style={styles.welcome}>Share API crash repo</Text>
           <Button
-            title="Navigate to Next"
+            title="Share"
             onPress={() => {
-              Navigation.push(this.props.componentId, {
-                component: {
-                  name: publicRoute.example2,
-                },
+              Share.share({
+                title: 'Title',
+                message: 'hello',
+                url: 'https://www.google.com.au'
               })
             }}
           />
