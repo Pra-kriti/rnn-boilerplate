@@ -27,8 +27,8 @@ export class Example extends React.Component<Props> {
             title="Share"
             onPress={() => {
               Share.share({
-                title: 'Title',
-                message: 'hello',
+                title: 'Share Title',
+                message: 'Share Message',
                 url: 'https://www.google.com.au'
               })
             }}
